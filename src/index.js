@@ -21,7 +21,7 @@ module.exports = function check(str, bracketsConfig) {
                 stack.push(currentSymbol);
             }
         }
-        
+
         else if (closingBrackets.has(currentSymbol)) {
             if (stack.length === 0 || stack[stack.length - 1] !== bracketsMap[currentSymbol]) {
                 return false;
@@ -32,5 +32,3 @@ module.exports = function check(str, bracketsConfig) {
 
     return stack.length === 0;
 }
-
-// ())(
